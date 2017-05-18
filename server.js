@@ -23,6 +23,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(require("./api_routes.js"));
 
+// All remaining requests return the React app, so it can handle routing.
+app.get('*', function(request, response) {
+  response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
+});
+
 app.listen(port, function(){
   console.log('listening on port', port);
 });
