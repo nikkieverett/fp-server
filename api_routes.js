@@ -1,6 +1,6 @@
 const express = require("express");
 const uuid = require('node-uuid');
-const Recipe = require('./models/recipe');
+const Recipe = require('./models/Recipe.js');
 
 const router = express.Router();
 
